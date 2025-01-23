@@ -24,8 +24,13 @@ pairs = [
 # Initialiser le chatbot
 chat = Chat(pairs, reflections)
 
+# Titre de l'application
+st.title("Bienvenue chez Dar Tajine 🍲")
+
+# Image de bannière
+st.image("logo-removebg-preview.png",use_container_width=True)
+
 # Configurer l'interface Streamlit
-st.title("Dar Tajine")
 st.write("Posez une question à notre Tajinebot et il vous répondra.")
 
 # Entrée utilisateur
@@ -34,7 +39,7 @@ user_input = st.text_input("Vous :")
 # Réponse du chatbot
 if user_input:
     response = chat.respond(user_input)
-    st.text_area("Chatbot :", value=response, height=200, max_chars=None, key=None)
+    st.text_area("Tajinebot :", value=response, height=200, max_chars=None, key=None)
 
 
 #streamlit run Chatbot.py
